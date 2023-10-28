@@ -295,6 +295,9 @@ document.getElementsByClassName("reset")[0].addEventListener("click",()=>{
     
     let button = document.getElementsByClassName("reset")[0];
     if(button.textContent !== "new game") button.textContent = "new game";
+
+    let result = document.getElementsByClassName("result")[0];
+    result.textContent = null;
     setNewGame();
 })
 
