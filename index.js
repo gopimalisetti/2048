@@ -292,7 +292,9 @@ let setNewGame = () => {
 
 }
 document.getElementsByClassName("reset")[0].addEventListener("click",()=>{
-
+    
+    let button = document.getElementsByClassName("reset")[0];
+    if(button.textContent !== "new game") button.textContent = "new game";
     setNewGame();
 })
 
