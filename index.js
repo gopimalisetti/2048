@@ -228,6 +228,17 @@ let checkAdjacentEqualNodes = () => {
     return false;
 
 }
+
+let check_2048 = () =>{
+
+    for(let r = 0; r < 4; r++){
+        for(let c = 0; c < 4; c++){
+            if(grid[r][c] === 2048) return true;
+        }
+    }
+
+    return false;
+}
 document.getElementsByTagName("body")[0].addEventListener("keydown", (e) => {
 
     let old_grid = JSON.stringify(grid);
@@ -236,13 +247,30 @@ document.getElementsByTagName("body")[0].addEventListener("keydown", (e) => {
     else if (e.key === "ArrowDown") clickDown();
     else if (e.key === "ArrowLeft") clickLeft();
     else if (e.key === "ArrowRight") clickRight();
+    
+    if(check_2048() === true){
+           
+        let result = document.getElementsByClassName("result")[0];
+        result.textContent = "you won";
+        result.style.color = "red";
+        let button = document.getElementsByClassName("reset")[0];
+        button.textContent = "play again"
 
+        return;
+    }
     if (old_grid === JSON.stringify(grid)){
 
         if(checkEmptyCells() === true) return;
         else if(checkAdjacentEqualNodes() === true) return;
-        else console.log("You Lose!!!")
-
+        else {
+            let result = document.getElementsByClassName("result")[0];
+            result.textContent = "you loose";
+            
+            let button = document.getElementsByClassName("reset")[0];
+            button.textContent = "try again"
+            console.log("You Lose!!!")
+        }
+        
     }
 
     let generated = generateRandomValue();

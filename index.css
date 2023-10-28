@@ -1,13 +1,30 @@
+.container1{
+
+    margin-left:5vw;
+    margin-top:10vh;
+    width: 23vw;
+    text-align: center;
+}
+
+.gameName{
+    float: left;
+    display: inline-block;
+    color: #90ee90;
+    font-size: 38px;
+}
 .scoreField{
+    float: right;
+    display: inline-block;
     border: darkmagenta 2px solid;
     text-align: center;
     width: 7vw;
-    margin-left:21vw;
-    margin-top:10vh;
+    /* margin-left:21vw;
+    margin-top:10vh; */
     height: 5vh;
 }
 
 .score{
+
     display: block;
     margin: 1px;
 }
@@ -44,4 +61,11 @@
     justify-content: center;
     color: white;
     font-weight: 700;
+}
+
+.result{
+    margin-left: 5vw;
+    margin-top: 7vh;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
 }
